@@ -1,10 +1,6 @@
 /// <reference types="cypress" />
 
 it("task2", () => {
-    //cy.visit("/");
-    //cy.get(".showcart");
-    //cy.get(".message");
-    //cy.get("#search");
     cy.visit("/checkout/#shipping");
     cy.get('#search').clear('s');
     cy.get('#search').type('shirt{enter}');
@@ -17,35 +13,34 @@ it("task2", () => {
     cy.get('.showcart').click();
     cy.get('#top-cart-btn-checkout').click();
     cy.wait(5000);
-    //cy.get('.showcart').click();
     // get Email using css-selector (#id )
     cy.get('#customer-email');
-    // get firstname using css-selector('[attribute=value]')
+    // get Firstname using css-selector('[attribute=value]')
     cy.get('[name=firstname]');
-    // get lastname using css-selector('[attribute=value]')
+    // get Lastname using css-selector('[attribute=value]')
     cy.get('[name=lastname]');
-    // get company using css-selector('[attribute=value]')
+    // get Company using css-selector('[attribute=value]')
     cy.get('[name=company]');
-    // get street addres 1 using css-selector('[attribute=value]')
+    // get Street Addres 1 using css-selector('[attribute=value]')
     cy.get('[name="street[1]"]');
-    // get street addres 2 using css-selector('[attribute=value]')
+    // get Street Addres 2 using css-selector('[attribute=value]')
     cy.get('[name="street[1]"]');
-    // get street addres 3 using css-selector('[attribute=value]')
+    // get Street Addres 3 using css-selector('[attribute=value]')
     cy.get('[name="street[2]"]');
-    // get city using css-selector('[attribute=value]')
+    // get City using css-selector('[attribute=value]')
     cy.get('[name=city]');
     // get State/Province using css-selector('[attribute=value]')
     cy.get('[name=region_id]');
-    // get postcode using css-selector('[attribute=value]')
+    // get Zip/Postal Code using css-selector('[attribute=value]')
     cy.get('[name=postcode]');
-    // get country using css-selector('[attribute=value]')
+    // get Country using css-selector('[attribute=value]')
     cy.get('[name=country_id]');
     // get Phone Number using css-selector ('[attribute=value]')
     cy.get('[name=telephone]');
-    // get Shipping Methods  first choose using css - selector('[attribute=value]')
-    cy.get('[value=flatrate_flatrate]');
-    // get Shipping Methods second  choose using css-selector('[attribute=value]')
+    // get Shipping Methods  first choose using css-selector('[attribute=value]')
     cy.get('[value=tablerate_bestway]');
+    // get Shipping Methods second  choose using css-selector('[attribute=value]')
+    cy.get('[value=flatrate_flatrate]');
     // get Next Button using css-selector (.class )
     cy.get('.button ');
 })
