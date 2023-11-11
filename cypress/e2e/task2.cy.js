@@ -13,10 +13,10 @@ it("task2", () => {
     cy.get('.swatch-attribute.color > .swatch-attribute-options').click();
     cy.get('#option-label-color-93-item-57').click();
     cy.get('#product-addtocart-button > span').click();
-    cy.wait(5000);
+    cy.wait(3000);
     cy.get('.showcart').click();
     cy.get('#top-cart-btn-checkout').click();
-    cy.wait(7000);
+    cy.wait(5000);
     //cy.get('.showcart').click();
     // get Email using css-selector (#id )
     cy.get('#customer-email');
@@ -26,11 +26,11 @@ it("task2", () => {
     cy.get('[name=lastname]');
     // get company using css-selector('[attribute=value]')
     cy.get('[name=company]');
-    // get street using css-selector('[attribute=value]')
-    cy.get('[name="street[0]"]');
-    // get street using css-selector('[attribute=value]')
+    // get street addres 1 using css-selector('[attribute=value]')
     cy.get('[name="street[1]"]');
-    // get street using css-selector('[attribute=value]')
+    // get street addres 2 using css-selector('[attribute=value]')
+    cy.get('[name="street[1]"]');
+    // get street addres 3 using css-selector('[attribute=value]')
     cy.get('[name="street[2]"]');
     // get city using css-selector('[attribute=value]')
     cy.get('[name=city]');
@@ -40,11 +40,12 @@ it("task2", () => {
     cy.get('[name=postcode]');
     // get country using css-selector('[attribute=value]')
     cy.get('[name=country_id]');
-    // get Phone Number using css-selector (.class1.class2)
-    cy.get('._required ._with-tooltip .input-text');
-    // get Shipping Methods using css - selector('[attribute=value]')
-    cy.get('[name=ko_unique_1]');
-    // get Shipping Methods using css-selector('[attribute=value]')
-    cy.get('[name=ko_unique_2]');
-    cy.get('.actions-toolbar .primary[type=submit]');
+    // get Phone Number using css-selector ('[attribute=value]')
+    cy.get('[name=telephone]');
+    // get Shipping Methods  first choose using css - selector('[attribute=value]')
+    cy.get('[value=flatrate_flatrate]');
+    // get Shipping Methods second  choose using css-selector('[attribute=value]')
+    cy.get('[value=tablerate_bestway]');
+    // get Next Button using css-selector (.class )
+    cy.get('.button ');
 })
