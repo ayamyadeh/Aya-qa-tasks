@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 describe("", () => {
-    it("sginin", () => {
+    it("signin", () => {
         cy.visit("https://demo.productionready.io/#/login")
         cy.contains("h1", "Sign in");
         cy.contains("Need an account?");
