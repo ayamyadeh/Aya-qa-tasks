@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-describe("", () => {
+describe("selectors", () => {
     it("signin", () => {
         cy.visit("https://demo.productionready.io/#/login")
         cy.contains("h1", "Sign in");
@@ -18,7 +18,7 @@ describe("", () => {
         cy.contains("A place to share your knowledge.");
         cy.contains("Global Feed");
         cy.get("favorite-btn").first();
-        cy.contains("span", "Read more...").first();
+        cy.contains("span", "Read more...");
         cy.contains("Popular Tags");
         cy.contains("codebaseShow");
         cy.get(".sidebar > div >a ").contains("deserunt");
