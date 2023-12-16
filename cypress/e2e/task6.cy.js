@@ -13,7 +13,7 @@ describe("", () => {
         cy.contains("Products").click();
         cy.contains("Add new").click();
         cy.get(".fa-plus").eq(0).click();
-        cy.get("#Name").clear({ force: true }).type("laptop123", { force: true });
+        cy.get("#Name").clear().type("laptop123");
 
         cy.get(".fa-plus").eq(1).click();
         cy.get("#product-price-area input").last().clear({ force: true }).type("3000", { force: true });
@@ -21,7 +21,7 @@ describe("", () => {
         cy.get(".alert-success").should("contain", "The new product has been added successfully.");
         // Add another product
         cy.contains("Add new").click();
-        cy.get("#Name").clear({ force: true }).type("laptop12", { force: true });
+        cy.get("#Name").clear().type("laptop12");
         cy.get("#product-info .card-tools button").click();
         cy.get("#product-price-area input").last().clear({ force: true }).type("3000", { force: true });
         cy.get("[name=save]").click();
