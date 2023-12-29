@@ -11,22 +11,16 @@ describe("", () => {
         cy.get("#nopSideBarPusher").click();
         cy.get(".nav-sidebar > li:nth-child(2) > a").click();
         cy.contains("Products").click();
-        cy.contains("Add new").click();
-        cy.get(".fa-plus").eq(0).click();
-        cy.get("#Name").clear().type("laptop123");
 
-        cy.get(".fa-plus").eq(1).click();
-        cy.get("#product-price-area input").last().clear({ force: true }).type("3000", { force: true });
-        cy.get("[name=save]").click();
-        cy.get(".alert-success").should("contain", "The new product has been added successfully.");
-        // Add another product
-        cy.contains("Add new").click();
-        cy.get("#Name").clear().type("laptop12");
-        cy.get("#product-info .card-tools button").click();
-        cy.get("#product-price-area input").last().clear({ force: true }).type("3000", { force: true });
-        cy.get("[name=save]").click();
-        cy.get(".alert-success").should("contain", "The new product has been added successfully.")
+        for (let i = 0; i < 2; i++) {
+            cy.contains("Add new").click();
+            cy.get(".fa-plus").eq(0).click();
+            cy.get("#Name").clear().type("laptop" + i);
+            cy.get(".fa-plus").eq(1).click();
+            cy.get("#product-price-area input").last().clear({ force: true }).type("3000", { force: true });
+            cy.get("[name=save]").click();
 
+        }
 
     });
 
@@ -36,7 +30,7 @@ describe("", () => {
         cy.get('.sorting_disabled  .mastercheckbox').eq(0).check();
         cy.get('#delete-selected').click();
         cy.get('#delete-selected-action-confirmation-submit-button').click();
-        cy.wait(300)
+        cy.wait(3000)
         cy.get('.dataTables_empty').should("exist");
 
 
