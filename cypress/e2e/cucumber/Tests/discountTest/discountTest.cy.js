@@ -16,7 +16,6 @@ Given("Click on Promotions from the dashboard", () => {
 });
 Given("Click on discount from the menu", () => {
     cy.contains("Discounts").click();
-
 });
 Given("Click on Add new button", () => {
     cy.contains("Add new").click();
@@ -25,10 +24,10 @@ When("Enter name in name input field", () => {
     cy.get("#Name").clear().type("discount");
 });
 When("Select discount type from discount type select field", () => {
-    cy.get("#DiscountTypeId").select(1)
+    cy.get("#DiscountTypeId").select(1);
 });
 When("Check use percentage option in Use percentage checkbox field", () => {
-    cy.get("#UsePercentage").check()
+    cy.get("#UsePercentage").check();
 });
 When("Enter discount amount in Discount amount input field", () => {
     cy.get("#pnlDiscountPercentage .k-numeric-wrap input.k-input").eq(0).type(20);
@@ -36,7 +35,10 @@ When("Enter discount amount in Discount amount input field", () => {
 When("Click on Save button", () => {
     cy.get("[name=save]").click();
 });
-Then("The new discount should be added successfully with {string}", (message) => {
-    cy.wait(500)
-    cy.get(".alert-success").should("contain", message)
-});
+Then(
+    "The new discount should be added successfully with {string}",
+    (message) => {
+        cy.wait(500);
+        cy.get(".alert-success").should("contain", message);
+    }
+);
