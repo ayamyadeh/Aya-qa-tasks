@@ -1,8 +1,9 @@
 import { Given, Then, When } from "cypress-cucumber-preprocessor/steps";
 import createAccountPageActions from "../../../../pageObjects/createAccountPage/actions.cy";
-import sharedActions from "../../../../../pageObjects/shared/actions.cy";
-import createAccountAssertions from "../../../../pageObjects/createAccountPage/assertions.cy";
+import createAccountAssertions from './../../../../pageObjects/createAccountPage/assertions.cy';
+import sharedActions from "../../../../pageObjects/shared/actions.cy";
 import sharedAssertions from "../../../../pageObjects/shared/asssertions.cy";
+
 const firstName = "Razan";
 const lastName = "user";
 const email = "razanUsser" + Math.floor(Math.random() * 100) + "@gmail.com";
@@ -45,8 +46,10 @@ When("Clicks on Create an account button", () => {
 });
 
 Then("The Account should be created successfully", () => {
-    sharedAssertion.checkUrlEqualValue("https://magento.softwaretestingboard.com/customer/account/")
-    createAccountAssertion.checkPageTitleContainValue("My Account")
+    sharedAssertion.checkUrlEqualValue(
+        "https://magento.softwaretestingboard.com/customer/account/"
+    );
+    createAccountAssertion.checkPageTitleContainValue("My Account");
 });
 
 Then("{string} message will be shown", (msg) => {
