@@ -4,9 +4,9 @@ import createAccountAssertions from './../../../../pageObjects/createAccountPage
 import sharedActions from "../../../../pageObjects/shared/actions.cy";
 import sharedAssertions from "../../../../pageObjects/shared/asssertions.cy";
 
-const firstName = "Razan";
+const firstName = "Aya";
 const lastName = "user";
-const email = "razanUsser" + Math.floor(Math.random() * 100) + "@gmail.com";
+const email = "AyaUsser" + Math.floor(Math.random() * 100) + "@gmail.com";
 const password = "test@123%6";
 const confirmPassword = "test@123%6";
 
